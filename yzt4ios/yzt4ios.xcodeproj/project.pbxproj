@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		992579F51AB66E3B007FC453 /* main_bg01.png in Resources */ = {isa = PBXBuildFile; fileRef = 992579F41AB66E3B007FC453 /* main_bg01.png */; };
+		992579F71AB66EC6007FC453 /* head_portrait_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 992579F61AB66EC6007FC453 /* head_portrait_bg.png */; };
+		992579F91AB670F6007FC453 /* icon_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = 992579F81AB670F6007FC453 /* icon_setting.png */; };
+		992579FD1AB67950007FC453 /* MineClctController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992579FC1AB67950007FC453 /* MineClctController.swift */; };
+		992579FF1AB680BE007FC453 /* MineClctCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992579FE1AB680BE007FC453 /* MineClctCell.swift */; };
 		99E468AA1AB2906E00067E16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E468A91AB2906E00067E16 /* AppDelegate.swift */; };
 		99E468AF1AB2906E00067E16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E468AD1AB2906E00067E16 /* Main.storyboard */; };
 		99E468B11AB2906E00067E16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E468B01AB2906E00067E16 /* Images.xcassets */; };
@@ -22,6 +27,9 @@
 		99E468DA1AB290DA00067E16 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E468D01AB290DA00067E16 /* MainController.swift */; };
 		99E468DB1AB290DA00067E16 /* MineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E468D11AB290DA00067E16 /* MineController.swift */; };
 		99E468DC1AB290DA00067E16 /* ToolController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E468D21AB290DA00067E16 /* ToolController.swift */; };
+		99E468DF1AB2AC1C00067E16 /* ReachabilityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E468DE1AB2AC1C00067E16 /* ReachabilityType.swift */; };
+		99E468E11AB2B3FD00067E16 /* install_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 99E468E01AB2B3FD00067E16 /* install_04.png */; };
+		99E468E41AB2C52F00067E16 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E468E31AB2C52F00067E16 /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		992579F41AB66E3B007FC453 /* main_bg01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg01.png; sourceTree = "<group>"; };
+		992579F61AB66EC6007FC453 /* head_portrait_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_portrait_bg.png; sourceTree = "<group>"; };
+		992579F81AB670F6007FC453 /* icon_setting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_setting.png; sourceTree = "<group>"; };
+		992579FC1AB67950007FC453 /* MineClctController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MineClctController.swift; path = ../MineClctController.swift; sourceTree = "<group>"; };
+		992579FE1AB680BE007FC453 /* MineClctCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineClctCell.swift; sourceTree = "<group>"; };
 		99E468A41AB2906E00067E16 /* yzt4ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yzt4ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E468A81AB2906E00067E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E468A91AB2906E00067E16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +67,9 @@
 		99E468D01AB290DA00067E16 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		99E468D11AB290DA00067E16 /* MineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineController.swift; sourceTree = "<group>"; };
 		99E468D21AB290DA00067E16 /* ToolController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolController.swift; sourceTree = "<group>"; };
+		99E468DE1AB2AC1C00067E16 /* ReachabilityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityType.swift; sourceTree = "<group>"; };
+		99E468E01AB2B3FD00067E16 /* install_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = install_04.png; sourceTree = "<group>"; };
+		99E468E31AB2C52F00067E16 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,16 +111,16 @@
 		99E468A61AB2906E00067E16 /* yzt4ios */ = {
 			isa = PBXGroup;
 			children = (
+				99E468E21AB2C47A00067E16 /* model */,
+				99E468DD1AB2ABEF00067E16 /* utils */,
 				99E468A91AB2906E00067E16 /* AppDelegate.swift */,
 				99E468C91AB290DA00067E16 /* ConversationController.swift */,
 				99E468CA1AB290DA00067E16 /* HomePageCell.swift */,
 				99E468CB1AB290DA00067E16 /* HomePageController.swift */,
-				99E468CC1AB290DA00067E16 /* icon_application_small.png */,
-				99E468CD1AB290DA00067E16 /* icon_home.png */,
-				99E468CE1AB290DA00067E16 /* icon_list.png */,
-				99E468CF1AB290DA00067E16 /* icon_my.png */,
 				99E468D01AB290DA00067E16 /* MainController.swift */,
 				99E468D11AB290DA00067E16 /* MineController.swift */,
+				992579FC1AB67950007FC453 /* MineClctController.swift */,
+				992579FE1AB680BE007FC453 /* MineClctCell.swift */,
 				99E468D21AB290DA00067E16 /* ToolController.swift */,
 				99E468AD1AB2906E00067E16 /* Main.storyboard */,
 				99E468B01AB2906E00067E16 /* Images.xcassets */,
@@ -117,6 +133,14 @@
 		99E468A71AB2906E00067E16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				992579F81AB670F6007FC453 /* icon_setting.png */,
+				992579F61AB66EC6007FC453 /* head_portrait_bg.png */,
+				992579F41AB66E3B007FC453 /* main_bg01.png */,
+				99E468E01AB2B3FD00067E16 /* install_04.png */,
+				99E468CC1AB290DA00067E16 /* icon_application_small.png */,
+				99E468CD1AB290DA00067E16 /* icon_home.png */,
+				99E468CE1AB290DA00067E16 /* icon_list.png */,
+				99E468CF1AB290DA00067E16 /* icon_my.png */,
 				99E468A81AB2906E00067E16 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -137,6 +161,22 @@
 				99E468BE1AB2906E00067E16 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99E468DD1AB2ABEF00067E16 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				99E468DE1AB2AC1C00067E16 /* ReachabilityType.swift */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		99E468E21AB2C47A00067E16 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				99E468E31AB2C52F00067E16 /* UserModel.swift */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,8 +260,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				99E468AF1AB2906E00067E16 /* Main.storyboard in Resources */,
+				992579F71AB66EC6007FC453 /* head_portrait_bg.png in Resources */,
+				992579F91AB670F6007FC453 /* icon_setting.png in Resources */,
+				992579F51AB66E3B007FC453 /* main_bg01.png in Resources */,
 				99E468D61AB290DA00067E16 /* icon_application_small.png in Resources */,
 				99E468D71AB290DA00067E16 /* icon_home.png in Resources */,
+				99E468E11AB2B3FD00067E16 /* install_04.png in Resources */,
 				99E468B41AB2906E00067E16 /* LaunchScreen.xib in Resources */,
 				99E468D81AB290DA00067E16 /* icon_list.png in Resources */,
 				99E468D91AB290DA00067E16 /* icon_my.png in Resources */,
@@ -245,9 +289,13 @@
 			files = (
 				99E468DB1AB290DA00067E16 /* MineController.swift in Sources */,
 				99E468D41AB290DA00067E16 /* HomePageCell.swift in Sources */,
+				992579FD1AB67950007FC453 /* MineClctController.swift in Sources */,
 				99E468D51AB290DA00067E16 /* HomePageController.swift in Sources */,
 				99E468D31AB290DA00067E16 /* ConversationController.swift in Sources */,
+				99E468DF1AB2AC1C00067E16 /* ReachabilityType.swift in Sources */,
+				99E468E41AB2C52F00067E16 /* UserModel.swift in Sources */,
 				99E468AA1AB2906E00067E16 /* AppDelegate.swift in Sources */,
+				992579FF1AB680BE007FC453 /* MineClctCell.swift in Sources */,
 				99E468DA1AB290DA00067E16 /* MainController.swift in Sources */,
 				99E468DC1AB290DA00067E16 /* ToolController.swift in Sources */,
 			);
@@ -441,6 +489,7 @@
 				99E468C51AB2906E00067E16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		99E468C61AB2906E00067E16 /* Build configuration list for PBXNativeTarget "yzt4iosTests" */ = {
 			isa = XCConfigurationList;
@@ -449,6 +498,7 @@
 				99E468C81AB2906E00067E16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

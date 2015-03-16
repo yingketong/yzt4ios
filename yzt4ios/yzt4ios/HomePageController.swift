@@ -1,13 +1,12 @@
 //
-//  PatientController.swift
-//  YiYou
+//  HomePageController.swift
+//  yzt4ios
 //
 //  Created by JasonFu on 15-1-20.
 //  Copyright (c) 2015年 JasonFu. All rights reserved.
 //
 
 import  UIKit
-
 class HomePageController: UITableViewController{
     
     var list = NSMutableArray()
@@ -20,12 +19,26 @@ class HomePageController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var item : NSDictionary = NSDictionary(objects:["http://imgsrc.baidu.com/forum/w%3D580/sign=5a4e33b7d4ca7bcb7d7bc7278e096b3f/29c8ca1b0ef41bd5852ee28052da81cb38db3d9e.jpg","公告", "2015新年放假公告:2015新年放假公告",(NSDate().description as NSString).substringToIndex(19)]
+        
+        let alertview = UIAlertView();
+        alertview.title = "当前网络不可用，请检查网络连接!";
+        if ReachabilityType.isConnectedToNetwork() {
+            initData();
+        } else {
+            alertview.show();
+        }
+
+    }
+    
+    func initData(){
+        var dic1 = ["img":"http://imgsrc.baidu.com/forum/w%3D580/sign=6d34407a6409c93d07f20effaf3df8bb/8d2fcf2a6059252d70091770379b033b5ab5b9fa.jpg","title":"待办","subTitle":"123","date":(NSDate().description as NSString).substringToIndex(19)];
+        var dic2 : NSDictionary = NSDictionary(objects:["http://imgsrc.baidu.com/forum/w%3D580/sign=5a4e33b7d4ca7bcb7d7bc7278e096b3f/29c8ca1b0ef41bd5852ee28052da81cb38db3d9e.jpg","公告", "2015新年放假公告:2015新年放假公告",(NSDate().description as NSString).substringToIndex(19)]
             ,forKeys: ["img","title","subTitle","date"])
-        list.addObject(item)
+        list.addObject(dic2)
+        list.addObject(dic1);
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         //设置左边编辑，右边添加item
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "insertNewObject:")
@@ -36,7 +49,6 @@ class HomePageController: UITableViewController{
         refresh.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
         refresh.attributedTitle = NSAttributedString(string: "下拉即可刷新")
         tableView.addSubview(refresh)
-       
     }
 
     // 刷新数据
