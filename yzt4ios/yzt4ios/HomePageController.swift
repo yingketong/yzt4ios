@@ -27,7 +27,7 @@ class HomePageController: UITableViewController{
         } else {
             alertview.show();
         }
-
+    
     }
     
     func initData(){
@@ -50,13 +50,22 @@ class HomePageController: UITableViewController{
         refresh.attributedTitle = NSAttributedString(string: "下拉即可刷新")
         tableView.addSubview(refresh)
     }
-
+    
     // 刷新数据
     func refreshData() {
-        var item : NSDictionary = NSDictionary(objects:["http://imgsrc.baidu.com/forum/w%3D580/sign=6d34407a6409c93d07f20effaf3df8bb/8d2fcf2a6059252d70091770379b033b5ab5b9fa.jpg","庞麦郎", "医生早上好！医生再见！","10-01"] , forKeys: ["img","title","subTitle","date"])
-        list.addObject(item)
-        self.tableView.reloadData()
-        self.refresh.endRefreshing()
+        if refresh.refreshing {
+            refresh.attributedTitle = NSAttributedString(string: "正在刷新")
+        }
+        dispatch_async(dispatch_get_global_queue(0, 0), { () -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                sleep(1)
+                var item : NSDictionary = NSDictionary(objects:["http://imgsrc.baidu.com/forum/w%3D580/sign=6d34407a6409c93d07f20effaf3df8bb/8d2fcf2a6059252d70091770379b033b5ab5b9fa.jpg","庞麦郎", "医生早上好！医生再见！","10-01"] , forKeys: ["img","title","subTitle","date"])
+                self.list.addObject(item)
+                self.tableView.reloadData()
+                self.refresh.endRefreshing()
+                self.refresh.attributedTitle = NSAttributedString(string: "下拉即可刷新")
+            })
+        })
     }
     
     func insertNewObject(sender: AnyObject) {
