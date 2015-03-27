@@ -37,6 +37,16 @@ class ReportController: UITableViewController{
     }
     
     func initData(){
+        let result = NetworkUtil.httpGet("http://10.87.66.223:8080/appServer/model/kpi/list.json?limit=6&start=0&page=1&orgId=2",params: nil)
+        if result != nil{
+            let resultArray = result.objectForKey("result") as NSArray!
+            for var i = 0 ; i<resultArray.count ;i++ {
+                println("resultArray: \(resultArray[i])") //prints the HTML of the page
+                
+            }
+        }
+
+
         var dic1 = ["img":"http://imgsrc.baidu.com/forum/w%3D580/sign=6d34407a6409c93d07f20effaf3df8bb/8d2fcf2a6059252d70091770379b033b5ab5b9fa.jpg","title":"待办","subTitle":"123","date":(NSDate().description as NSString).substringToIndex(19)];
         var dic2 : NSDictionary = NSDictionary(objects:["http://imgsrc.baidu.com/forum/w%3D580/sign=5a4e33b7d4ca7bcb7d7bc7278e096b3f/29c8ca1b0ef41bd5852ee28052da81cb38db3d9e.jpg","公告"]
             ,forKeys: ["img","title"])

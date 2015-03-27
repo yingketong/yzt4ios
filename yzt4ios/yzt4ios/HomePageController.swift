@@ -19,7 +19,6 @@ class HomePageController: UITableViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let alertview = UIAlertView();
         alertview.title = "当前网络不可用，请检查网络连接!";
         if ReachabilityType.isConnectedToNetwork() {

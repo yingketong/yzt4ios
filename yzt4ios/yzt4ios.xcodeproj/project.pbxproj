@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		990866411AC53B0200F20A5E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990866401AC53B0200F20A5E /* SwiftyJSON.swift */; };
 		9915DC1E1AC1433E0071E2F3 /* icon_meeting.png in Resources */ = {isa = PBXBuildFile; fileRef = 9915DC1D1AC1433E0071E2F3 /* icon_meeting.png */; };
 		992579F51AB66E3B007FC453 /* main_bg01.png in Resources */ = {isa = PBXBuildFile; fileRef = 992579F41AB66E3B007FC453 /* main_bg01.png */; };
 		992579F71AB66EC6007FC453 /* head_portrait_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 992579F61AB66EC6007FC453 /* head_portrait_bg.png */; };
@@ -22,6 +23,11 @@
 		99BA91121AB800BD00A1EE1C /* icon_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BA91111AB800BD00A1EE1C /* icon_person.png */; };
 		99BA91141AB800DE00A1EE1C /* icon_password.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BA91131AB800DE00A1EE1C /* icon_password.png */; };
 		99BA91161AB8012800A1EE1C /* icon_contact.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BA91151AB8012800A1EE1C /* icon_contact.png */; };
+		99BDAD3A1AC501C90054F760 /* NetworkUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BDAD391AC501C90054F760 /* NetworkUtil.swift */; };
+		99BDAD3C1AC51CC20054F760 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BDAD3B1AC51CC20054F760 /* HTTPTask.swift */; };
+		99BDAD3F1AC51DB20054F760 /* HTTPRequestSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BDAD3D1AC51DB20054F760 /* HTTPRequestSerializer.swift */; };
+		99BDAD401AC51DB20054F760 /* HTTPResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BDAD3E1AC51DB20054F760 /* HTTPResponseSerializer.swift */; };
+		99BDAD421AC51DD50054F760 /* HTTPUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BDAD411AC51DD50054F760 /* HTTPUpload.swift */; };
 		99D4780A1AC13DC80008A91C /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D478091AC13DC80008A91C /* AppController.swift */; };
 		99E468AA1AB2906E00067E16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E468A91AB2906E00067E16 /* AppDelegate.swift */; };
 		99E468AF1AB2906E00067E16 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E468AD1AB2906E00067E16 /* Main.storyboard */; };
@@ -53,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		990866401AC53B0200F20A5E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		9915DC1D1AC1433E0071E2F3 /* icon_meeting.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_meeting.png; sourceTree = "<group>"; };
 		992579F41AB66E3B007FC453 /* main_bg01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_bg01.png; sourceTree = "<group>"; };
 		992579F61AB66EC6007FC453 /* head_portrait_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head_portrait_bg.png; sourceTree = "<group>"; };
@@ -68,6 +75,11 @@
 		99BA91111AB800BD00A1EE1C /* icon_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_person.png; sourceTree = "<group>"; };
 		99BA91131AB800DE00A1EE1C /* icon_password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_password.png; sourceTree = "<group>"; };
 		99BA91151AB8012800A1EE1C /* icon_contact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_contact.png; sourceTree = "<group>"; };
+		99BDAD391AC501C90054F760 /* NetworkUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUtil.swift; sourceTree = "<group>"; };
+		99BDAD3B1AC51CC20054F760 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		99BDAD3D1AC51DB20054F760 /* HTTPRequestSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestSerializer.swift; sourceTree = "<group>"; };
+		99BDAD3E1AC51DB20054F760 /* HTTPResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponseSerializer.swift; sourceTree = "<group>"; };
+		99BDAD411AC51DD50054F760 /* HTTPUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPUpload.swift; sourceTree = "<group>"; };
 		99D478091AC13DC80008A91C /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		99E468A41AB2906E00067E16 /* yzt4ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = yzt4ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E468A81AB2906E00067E16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +122,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		99BDAD431AC521F50054F760 /* SwiftHTTP */ = {
+			isa = PBXGroup;
+			children = (
+				990866401AC53B0200F20A5E /* SwiftyJSON.swift */,
+				99BDAD3D1AC51DB20054F760 /* HTTPRequestSerializer.swift */,
+				99BDAD3E1AC51DB20054F760 /* HTTPResponseSerializer.swift */,
+				99BDAD3B1AC51CC20054F760 /* HTTPTask.swift */,
+				99BDAD411AC51DD50054F760 /* HTTPUpload.swift */,
+			);
+			name = SwiftHTTP;
+			sourceTree = "<group>";
+		};
 		99E4689B1AB2906E00067E16 = {
 			isa = PBXGroup;
 			children = (
@@ -196,7 +220,9 @@
 		99E468DD1AB2ABEF00067E16 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				99BDAD431AC521F50054F760 /* SwiftHTTP */,
 				99E468DE1AB2AC1C00067E16 /* ReachabilityType.swift */,
+				99BDAD391AC501C90054F760 /* NetworkUtil.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -326,6 +352,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99BDAD401AC51DB20054F760 /* HTTPResponseSerializer.swift in Sources */,
+				99BDAD3C1AC51CC20054F760 /* HTTPTask.swift in Sources */,
+				99BDAD3A1AC501C90054F760 /* NetworkUtil.swift in Sources */,
 				99E468DB1AB290DA00067E16 /* MineController.swift in Sources */,
 				99E468D41AB290DA00067E16 /* HomePageCell.swift in Sources */,
 				99E468D51AB290DA00067E16 /* HomePageController.swift in Sources */,
@@ -336,6 +365,9 @@
 				99AE154C1AC1373200EDF0B0 /* AppWebController.swift in Sources */,
 				99E468AA1AB2906E00067E16 /* AppDelegate.swift in Sources */,
 				99E468DA1AB290DA00067E16 /* MainController.swift in Sources */,
+				99BDAD421AC51DD50054F760 /* HTTPUpload.swift in Sources */,
+				99BDAD3F1AC51DB20054F760 /* HTTPRequestSerializer.swift in Sources */,
+				990866411AC53B0200F20A5E /* SwiftyJSON.swift in Sources */,
 				99E468DC1AB290DA00067E16 /* ReportController.swift in Sources */,
 				99B5636C1AC3B9F100655591 /* ReportCell.swift in Sources */,
 			);
