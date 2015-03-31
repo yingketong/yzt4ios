@@ -9,53 +9,53 @@
 import UIKit
 
 class ReportController: UITableViewController{
+
     
     var list = NSMutableArray()
     var refresh = UIRefreshControl()
-    
-    //
-    //    override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
-    //        self.performSegueWithIdentifier("aa", sender: self)
-    //    }
-    
+    var progressView = UIActivityIndicatorView()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        let alertview = UIAlertView();
-        alertview.title = "当前网络不可用，请检查网络连接!";
         if ReachabilityType.isConnectedToNetwork() {
             initData();
+            self.setExtraCellLineHidden(tableView)
         } else {
-            alertview.show();
+            alert();
         }
-        
         //添加刷新
         refresh.addTarget(self, action: "refreshData", forControlEvents: UIControlEvents.ValueChanged)
         refresh.attributedTitle = NSAttributedString(string: "下拉即可刷新")
         tableView.addSubview(refresh)
+        progressView.frame = CGRectMake(0, 0,100,100)
+        progressView.center = self.view.center
+        progressView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        progressView.startAnimating()
+        self.view.addSubview(progressView)
+        
     }
     
     func initData(){
-        let result = NetworkUtil.httpGet("http://10.87.66.223:8080/appServer/model/kpi/list.json?limit=6&start=0&page=1&orgId=2",params: nil)
-        if result != nil{
-            let resultArray = result.objectForKey("result") as NSArray!
-            for var i = 0 ; i<resultArray.count ;i++ {
-                println("resultArray: \(resultArray[i])") //prints the HTML of the page
-                
+        var urlString = "http://10.87.66.209:8080/appServer/model/kpi/list.json?limit=20&start=0&page=1&orgId=2"
+        let request = YYHRequest(url: NSURL(string: urlString)!)
+        
+        request.loadWithCompletion { response, data, error in
+            if data != nil {
+                var error : NSError?
+                let str = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                let jsonData = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers, error: &error) as NSDictionary!
+                if (jsonData == nil || error != nil){
+                    println("error: \(error)")
+                }
+                let resultArray = jsonData.objectForKey("result") as NSArray!
+                for var i = 0 ; i<resultArray.count ;i++ {
+                    self.list.addObject(resultArray[i])
+                }
+                self.tableView.reloadData()
+                println("response: \(jsonData)")
             }
         }
-
-
-        var dic1 = ["img":"http://imgsrc.baidu.com/forum/w%3D580/sign=6d34407a6409c93d07f20effaf3df8bb/8d2fcf2a6059252d70091770379b033b5ab5b9fa.jpg","title":"待办","subTitle":"123","date":(NSDate().description as NSString).substringToIndex(19)];
-        var dic2 : NSDictionary = NSDictionary(objects:["http://imgsrc.baidu.com/forum/w%3D580/sign=5a4e33b7d4ca7bcb7d7bc7278e096b3f/29c8ca1b0ef41bd5852ee28052da81cb38db3d9e.jpg","公告"]
-            ,forKeys: ["img","title"])
-        list.addObject(dic2)
-        list.addObject(dic1);
-        self.setExtraCellLineHidden(tableView)
-
     }
-    
     // MARK: - Table view data source
     
     //返回节的个数
@@ -72,15 +72,14 @@ class ReportController: UITableViewController{
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as ReportCell
         var row = indexPath.row
         var rowDict : NSDictionary = list.objectAtIndex(row) as NSDictionary
-        let url : String = rowDict.objectForKey("img") as String
-        let dataImg : NSData = NSData(contentsOfURL: NSURL(string : url)!)!
+        let imgUrl : String = rowDict.objectForKey("kpiIconUrl") as String
+        let dataImg : NSData = NSData(contentsOfURL: NSURL(string : "http://211.95.5.70/appServer/"+imgUrl)!)!
         cell.Img.image = UIImage(data: dataImg)
-        cell.Title.text = rowDict.objectForKey("title") as? String
-//        cell.SubTitle.text = rowDict.objectForKey("subTitle") as? String
-//        cell.Date.text = rowDict.objectForKey("date") as? String
+        cell.Title.text = rowDict.objectForKey("kpiName") as? String
+        progressView.removeFromSuperview()
         return cell
-        
     }
+    
     //隐藏多余分割线
     func setExtraCellLineHidden(tableView:UITableView){
         var view = UIView()
@@ -101,6 +100,25 @@ class ReportController: UITableViewController{
                     self.tableView.reloadData()
                 })
         })
+    }
+ 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+            var indexPath : NSIndexPath = tableView.indexPathForSelectedRow()!
+            var row = indexPath.row
+            var rowDict : NSDictionary = list.objectAtIndex(row) as NSDictionary
+            if segue.identifier == "showReport" {
+                (segue.destinationViewController as WebController).object = rowDict.objectForKey("kpiUrl") as String
+                (segue.destinationViewController as WebController).titleString = rowDict.objectForKey("kpiName") as String
+            }
+    }
+    
+    func alert(){
+        var alertview = UIAlertView();
+        alertview.title = "出错!"
+        alertview.delegate = self
+        alertview.message = "当前网络不可用，请检查网络连接!";
+        alertview.addButtonWithTitle("确定")
+        alertview.show();
     }
 }
 

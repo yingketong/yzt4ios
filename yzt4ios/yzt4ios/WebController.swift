@@ -1,5 +1,5 @@
 //
-//  AppWebController.swift
+//  WebController.swift
 //  yzt4ios
 //
 //  Created by JasonFu on 15-3-24.
@@ -9,19 +9,23 @@
 import UIKit
 
 
-class AppWebController: UIViewController, UIWebViewDelegate {
+class WebController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet var webViews: UIWebView!
     //接受传进来的值
     var object: NSString?
+    var titleString: NSString?
+
     @IBOutlet weak var progBar: UIProgressView!
     //进度条计时器
     var ptimer:NSTimer!
     
+    @IBOutlet weak var nav: UINavigationItem!
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.webViews.delegate = self;
+        nav.title = titleString
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor();
         
         // 设置该进度条的初始进度为0

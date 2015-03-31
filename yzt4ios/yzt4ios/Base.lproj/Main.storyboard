@@ -34,6 +34,7 @@
                                 <connections>
                                     <outlet property="Img" destination="QQI-rg-faP" id="FYq-06-GpN"/>
                                     <outlet property="Title" destination="fZT-nH-6Pt" id="iwy-iW-eqD"/>
+                                    <segue destination="6TM-f0-Fv9" kind="push" identifier="showReport" id="Td4-aQ-WeK"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -80,7 +81,7 @@
                                     <segue destination="6TM-f0-Fv9" kind="push" identifier="showApp" id="1V7-cq-ODq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="会议室" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30z-df-cuY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预定会场" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="30z-df-cuY">
                                 <rect key="frame" x="19" y="126" width="60" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="HfR-Y4-W8j"/>
@@ -109,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="1717.5" y="-270.5"/>
         </scene>
-        <!--会议室预定-->
+        <!--Web Controller-->
         <scene sceneID="e4V-Yw-xps">
             <objects>
-                <viewController id="6TM-f0-Fv9" customClass="AppWebController" customModule="yzt4ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6TM-f0-Fv9" customClass="WebController" customModule="yzt4ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xRz-dW-Fcr"/>
                         <viewControllerLayoutGuide type="bottom" id="tkW-Ik-Gvh"/>
@@ -131,9 +132,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="会议室预定" id="4Tr-wI-amo"/>
+                    <navigationItem key="navigationItem" id="4Tr-wI-amo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="nav" destination="4Tr-wI-amo" id="Pmg-or-FY0"/>
                         <outlet property="progBar" destination="ZHb-PK-mg4" id="x44-Gs-D2d"/>
                         <outlet property="webViews" destination="N0E-il-Zci" id="A7i-oz-ysr"/>
                     </connections>
@@ -510,4 +512,7 @@
         <image name="icon_setting.png" width="128" height="128"/>
         <image name="main_bg01.png" width="720" height="403"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Td4-aQ-WeK"/>
+    </inferredMetricsTieBreakers>
 </document>
